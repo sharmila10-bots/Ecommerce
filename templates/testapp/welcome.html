@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="nav-link" href="#"><b>E-SHOP</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/home">Shop<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+
+      </div>
+
+          <div class="col-auto">
+            <a  href="/accounts/login" class="btn ton btn-primary">LOG IN</a>
+
+
+          <a  href="/signup" class="btn ton btn-primary">SIGN UP</a>
+        </div>
+      </ul>
+        </div>
+  </nav>
+</div><br>
+{% block body_block %}
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8c3dlZXR8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60" alt="First slide" height="600px" width="600px">
+    </div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="https://images.unsplash.com/photo-1604671368394-2240d0b1bb6c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fHNtYXJ0cGhvbmVzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Second slide" height="600px" width="600px">
+</div>
+  <div class="carousel-item">
+    <img class="d-block w-100" src="https://images.unsplash.com/photo-1601303182516-aea136d5d376?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fGdpZnQlMjBiYXNrZXR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Third slide" height="600px" width="600px">
+  </div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="https://images.unsplash.com/photo-1587305138714-9675ed5c9415?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDV8fG9ubGluZSUyMHNob3BwaW5nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Fourth slide" height="600px" width="600px">
+</div>
+<div class="carousel-item active">
+  <img class="d-block w-100" src="https://images.unsplash.com/photo-1532697057284-bbe526e18cdb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFnc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Fifth slide" height="600px" width="600px">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="https://images.unsplash.com/photo-1499013819532-e4ff41b00669?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTR8fHNob2VzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sixth slide" height="600px" width="600px">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8amV3ZWxyeXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Seventh slide" height="600px" width="600px">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="https://images.unsplash.com/photo-1468421201266-ec88b2809284?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8d2F0Y2hlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Eigth slide" height="600px" width="600px">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDR8fGNsb3RoZXN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Nineth slide" height="600px" width="600px">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="https://images.unsplash.com/photo-1591375275624-c2f9fdcc1dc2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzF8fG9ubGluZSUyMHNob3BwaW5nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Tenth slide" height="600px" width="600px">
+</div>
+</div>
+<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a>
+</div>
+
+{% endblock %}
+
+
+
+</div>
+
+
+  </body>
+</html>

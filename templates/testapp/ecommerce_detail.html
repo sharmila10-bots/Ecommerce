@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/styled.css"%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title></title>
+  </head>
+  <body><br>
+
+    <div class="container" align=center>
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><b>E-SHOP</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+    </div>
+    <div class="col-auto">
+      <a href="/accounts/logout" class="btn btn-success">Logout</a>
+    </div>
+    </ul>
+  </div>
+</nav>
+
+      </div> <br>
+      {% block body_block %}
+        <form method="POST">
+          <div class="row">
+            <div class="col">
+              <div class="card" style="width: 20rem;height: 35rem;">
+                <h5 class="card-title" id="name"><b>{{ecommerce.title}}</b></h5>
+                <img class="card-img-top" src="{{ecommerce.image}}" alt="Card image cap">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">{{ecommerce.category}}</h6>
+                  <p class="card-text" id="price"><strike>Rs: {{ecommerce.price}}</strike></p>
+                  <p class="card-text" id="dprice"><b>M.R.P: Rs {{ecommerce.discountedprice}}</b></p>
+                  <p class="card-text">{{ecommerce.description}}</p>
+                  <a href="/confirm" class="btn btn-success">Buy Now</a>
+                </div>
+              </div><br>
+              </div>
+
+            </div>
+
+        </form>
+
+        {% endblock %}
+
+      </div>
+
+    </div>
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,8 @@
+body{
+  background-image: url(https://images.unsplash.com/photo-1605031641576-0242599dae9f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nzl8fGJhY2tncm91bmQlMjBpbWFnZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+  background-size: cover;
+}
+
+p {
+  font-size: 20px;
+}

@@ -1,0 +1,21 @@
+img {
+    float: left;
+    width:  250px;
+    height: 250px;
+    object-fit: cover;
+}
+.jumbotron{
+  padding-left: 50px;
+  background-color: green;
+}
+.container{
+  background-color: grey;
+}
+.card{
+  margin: 10px;
+  padding: 10px;
+}
+
+.btn{
+  float: right;
+}

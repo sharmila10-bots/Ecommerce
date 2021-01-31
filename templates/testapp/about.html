@@ -1,0 +1,37 @@
+{% extends "testapp/welcome.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/about.css"%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title></title>
+  </head>
+  {% block body_block %}
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h2>About Us :</h2><br>
+        <p align="Justify"><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-Shop is an e-commerce company headquartered in Bangalore, Karnataka, India, and registered in Singapore. The company initially focused on online book sales before expanding into other product categories such as consumer electronics, fashion, home essentials, groceries, and lifestyle products.</h5></p>
+
+       <p align="Justify"><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The service competes primarily with Amazon's Indian subsidiary and domestic rival Snapdeal. As of March 2017, E-Shop held a 39.5% market share of India's e-commerce industry. E-Shop has a dominant position in the apparel segment, bolstered by its acquisition of Myntra, and was described as being "neck and neck" with Amazon in the sale of electronics and mobile phones. E-Shop also owns PhonePe, a mobile payments service based on the Unified Payments Interface.</h5></p><br><br>
+       <div class="row">
+         <div class="col">
+           <img src="https://images.unsplash.com/photo-1592840054664-6bc0f6fbc3d6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fHNob3BwaW5nJTIwYmFnfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="..." class="rounded-circle" height="350px" width="350px">
+         </div>
+         <div class="col">
+           <img src="https://images.unsplash.com/photo-1595367189327-391b72c90283?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fHNob3BwaW5nJTIwb25saW5lfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="..." class="rounded-circle" height="350px" width="350px">
+         </div>
+
+       </div>
+
+
+      </div>
+
+
+    </div>
+
+  </body>
+  {% endblock %}
+</html>

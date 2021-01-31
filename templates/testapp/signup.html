@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/styled1.css"%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+       <h2 align='center'>Sign Up Form</h2><br>
+        <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-dark" align="center">Register</button>
+      </form>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

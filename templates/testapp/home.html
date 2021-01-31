@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/styled.css"%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><b>E-SHOP</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/welcome">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      </div>
+      <div class="col-auto">
+        <button id="cart" type="button" data-html="true" class="btn btn-success my-2 my-sm-0" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is My Cart">
+          Cart(0)
+  </button>
+
+      </div>
+    </ul>
+  </div>
+</nav>
+
+
+      </div><br>
+      {% block body_block %}
+      <div class="row">
+        <div class="col">
+          <form class="card card-sm">
+            <div class="card-body row">
+              <div class="col">
+                <input type="search" name="item_name"  placeholder="Search for products" class="form control form-control-borderless">
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-success">Search</button>
+              </div>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div><br><br>
+        {% endblock %}
+
+      <div class="row">
+        {% for i in ecommerce %}
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{i.image}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 id="name{{i.id}}" class="card-title">{{i.title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{i.category}}</h6>
+              <p class="card-text" id="price">Rs: <strike>{{i.price}}</strike></p>
+              <p class="card-text">INR Rs: <b id="dprice{{i.id}}">{{i.discountedprice}}</b></p>
+              <a href="/detail/{{i.id}}" class="btn btn-success">View</a>
+              <button  id="{{i.id}}"class="btn atc btn-success">Add to cart</button>
+            </div>
+          </div><br>
+          </div>
+          {% endfor %}
+        </div>
+
+    </div>
+  </body>
+  <script type="text/javascript">
+
+  if(localStorage.getItem('cart')==null)
+  {
+       var cart={}//key=product_id and value=quantity
+  }
+
+  else
+   {
+    cart=JSON.parse(localStorage.getItem('cart'))//{4:2}
+  }
+
+
+  $(document).on('click','.atc',function()
+  {
+  console.log("Item has been added")
+  var item_id=this.id.toString()
+  console.log(item_id);
+
+
+  if(cart[item_id]!=undefined)
+  {
+    cart[item_id]=cart[item_id]+1;
+
+  }
+
+  else
+   {
+    cart[item_id]= 1;
+
+  }
+
+  console.log(cart);
+
+  localStorage.setItem('cart',JSON.stringify(cart))
+
+  document.getElementById('cart').innerHTML="Cart("+Object.values(cart).length+")"
+  });
+
+  $(document).on('click','.btc',function()
+  {
+    if(localStorage.getItem('cart')==null)
+    {
+         var cart={}//key=product_id and value=quantity
+         alert("No Items available on cart......!")
+    }
+
+    else
+     {
+      cart=JSON.parse(localStorage.getItem('cart'))//{4:2}
+      localStorage.clear()
+      alert("Your cart item is cleared......!");
+    }
+
+  });
+
+  DisplayCart(cart)
+  function DisplayCart(cart)
+  {
+
+      var cartString="";
+      cartString += "<h5>Purchase Details</h5>"
+
+    for(var x in cart)//cart={3:5,4:6}
+    {
+      cartString += "<b>Name :</b>"+" "+ document.getElementById("name"+x).innerHTML + " "+"," +" "+"<b>Quantity :</b>"+" "+ cart[x] +"<br />"
+      //cartString = cartString + document.getElementById("name"+x).innerHTML
+      //cartString = "<h5>This is my cart</h5>" + Titan + 5
+    }
+    cartString += "<button class='btn btc btn-success'>Clear Cart</button>" + " " +"<a href='/confirm' class='btn btn-success'>CheckOut</a>"
+    document.getElementById('cart').setAttribute('data-content',cartString)
+
+
+    $('[data-toggle="popover"]').popover()
+  }
+  </script>
+  {% block js %}
+
+  {% endblock %}
+
+</html>
